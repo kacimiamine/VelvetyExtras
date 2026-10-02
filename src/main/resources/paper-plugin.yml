@@ -1,0 +1,11 @@
+name: VelvetyExtras
+description: $description
+prefix: [ VelvetyExtras ]
+version: '${version}'
+
+main: com.kacimiamine.velvetyextras.VelvetyExtras
+api-version: '26.3'
+load: POSTWORLD
+
+authors: [ kacimiamine ]
+website: https://github.com/kacimiamine
