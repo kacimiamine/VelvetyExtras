@@ -6,4 +6,9 @@ public class MinecartBoatSplitModule extends ModuleImpl {
     protected String name() {
         return "MinecartChest & BoatChest split";
     }
+
+    @Override
+    protected String configName() {
+        return "minecart-boat-split-config.yml";
+    }
 }
