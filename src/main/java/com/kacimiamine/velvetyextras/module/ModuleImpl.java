@@ -20,8 +20,8 @@ public abstract class ModuleImpl implements Module {
 
     @Override
     public void enable() {
-        if (!isEnabled()) return;
         initConfig();
+        if (!isEnabled()) return;
         VelvetyExtras.logger().info("{} module is enabled!", this.name());
     }
 
