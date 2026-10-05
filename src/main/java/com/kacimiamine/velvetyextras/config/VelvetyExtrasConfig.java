@@ -9,8 +9,6 @@ import java.io.IOException;
 public class VelvetyExtrasConfig {
 
     public static File configDir;
-    private static File configFile;
-    private static YamlConfiguration config;
     public static int version;
 
     public static void init() {
@@ -21,8 +19,8 @@ public class VelvetyExtrasConfig {
             VelvetyExtras.logger().error("Config directory ({}) can not be created", configDir.getAbsolutePath());
         }
 
-        configFile = new File(plugin.getDataFolder(), "config.yml");
-        config = YamlConfiguration.loadConfiguration(configFile);
+        File configFile = new File(plugin.getDataFolder(), "config.yml");
+        YamlConfiguration config = YamlConfiguration.loadConfiguration(configFile);
 
         version = getInt(config, "config-version", 1);
         try {
