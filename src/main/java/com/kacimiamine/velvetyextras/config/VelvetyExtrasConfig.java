@@ -16,7 +16,7 @@ public class VelvetyExtrasConfig {
     public static void init() {
         VelvetyExtras plugin = VelvetyExtras.getInstance();
 
-        configDir = new File(plugin.getDataFolder(), "config");
+        configDir = new File(plugin.getDataFolder(), "modules");
         if (!configDir.exists() && !configDir.mkdirs()) {
             VelvetyExtras.logger().error("Config directory ({}) can not be created", configDir.getAbsolutePath());
         }
