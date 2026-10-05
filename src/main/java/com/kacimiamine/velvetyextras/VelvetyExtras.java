@@ -45,6 +45,7 @@ public final class VelvetyExtras extends JavaPlugin {
 
     public void reload() {
         Bukkit.getScheduler().runTaskAsynchronously(this, () -> {
+            VelvetyExtrasModuleLoader.unregisterAllLoadedModules();
             VelvetyExtrasConfig.init();
             VelvetyExtrasModuleLoader.registerModules(this);
 

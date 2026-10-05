@@ -5,4 +5,6 @@ public interface Module {
     void enable();
 
     boolean isEnabled();
+
+    void disable();
 }
