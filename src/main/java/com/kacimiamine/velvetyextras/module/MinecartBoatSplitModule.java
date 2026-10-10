@@ -1,6 +1,7 @@
 package com.kacimiamine.velvetyextras.module;
 
 import com.destroystokyo.paper.MaterialSetTag;
+import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.ChestBoat;
@@ -42,6 +43,7 @@ public class MinecartBoatSplitModule extends ModuleImpl {
     @EventHandler(priority = EventPriority.NORMAL, ignoreCancelled = true)
     public void onVehicleDestroy(VehicleDestroyEvent event) {
         if (event.getAttacker() == null || !(event.getAttacker() instanceof Player player)) return;
+        if (player.getGameMode() != GameMode.SURVIVAL) return;
 
         Entity vehicle = event.getVehicle();
         Location location = vehicle.getLocation();
