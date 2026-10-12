@@ -21,7 +21,7 @@ public class FoodEffectsModule extends ModuleImpl {
 
     @Override
     protected String name() {
-        return "Food Effects split";
+        return "Food Effects";
     }
 
     @Override
