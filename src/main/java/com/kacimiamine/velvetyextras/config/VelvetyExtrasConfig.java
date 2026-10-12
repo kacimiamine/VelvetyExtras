@@ -1,6 +1,7 @@
 package com.kacimiamine.velvetyextras.config;
 
 import com.kacimiamine.velvetyextras.VelvetyExtras;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
@@ -53,5 +54,10 @@ public class VelvetyExtrasConfig {
         if (config.isSet(path)) return config.getBoolean(path);
         config.set(path, value);
         return value;
+    }
+
+    public static ConfigurationSection getSection(YamlConfiguration config, String path) {
+        ConfigurationSection section = config.getConfigurationSection(path);
+        return section != null ? section : config.createSection(path);
     }
 }

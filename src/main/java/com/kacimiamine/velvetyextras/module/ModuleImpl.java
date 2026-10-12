@@ -2,6 +2,7 @@ package com.kacimiamine.velvetyextras.module;
 
 import com.kacimiamine.velvetyextras.VelvetyExtras;
 import com.kacimiamine.velvetyextras.config.VelvetyExtrasConfig;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
@@ -68,6 +69,10 @@ public abstract class ModuleImpl implements Module, Listener {
 
     protected boolean getBoolean(String path, boolean value) {
         return VelvetyExtrasConfig.getBoolean(this.config, path, value);
+    }
+
+    protected ConfigurationSection getSection(String path) {
+        return VelvetyExtrasConfig.getSection(this.config, path);
     }
 
     protected void configValues() {
