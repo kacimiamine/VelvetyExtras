@@ -11,6 +11,7 @@ public class VelvetyExtrasConfig {
 
     public static File configDir;
     public static int version;
+    private static YamlConfiguration config;
 
     public static void init() {
         VelvetyExtras plugin = VelvetyExtras.getInstance();
@@ -21,9 +22,10 @@ public class VelvetyExtrasConfig {
         }
 
         File configFile = new File(plugin.getDataFolder(), "config.yml");
-        YamlConfiguration config = YamlConfiguration.loadConfiguration(configFile);
+        config = YamlConfiguration.loadConfiguration(configFile);
 
         version = getInt(config, "config-version", 1);
+        configValues();
         try {
             config.save(configFile);
         } catch (IOException e) {
@@ -59,5 +61,11 @@ public class VelvetyExtrasConfig {
     public static ConfigurationSection getSection(YamlConfiguration config, String path) {
         ConfigurationSection section = config.getConfigurationSection(path);
         return section != null ? section : config.createSection(path);
+    }
+
+    // CONFIG
+    public static boolean logModuleStatus = true;
+    private static void configValues() {
+        logModuleStatus = getBoolean(config, "log-module-status", logModuleStatus);
     }
 }

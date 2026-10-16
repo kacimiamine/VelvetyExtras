@@ -28,7 +28,7 @@ public abstract class ModuleImpl implements Module, Listener {
         initConfig();
         if (!isEnabled()) return;
         plugin.getServer().getPluginManager().registerEvents(this, plugin);
-        VelvetyExtras.logger().info("{} module is enabled!", this.name());
+        if (VelvetyExtrasConfig.logModuleStatus) VelvetyExtras.logger().info("{} module is enabled!", this.name());
     }
 
     @Override
@@ -39,7 +39,7 @@ public abstract class ModuleImpl implements Module, Listener {
     @Override
     public void disable() {
         HandlerList.unregisterAll(this);
-        VelvetyExtras.logger().info("{} module is disabled!", this.name());
+        if (VelvetyExtrasConfig.logModuleStatus) VelvetyExtras.logger().info("{} module is disabled!", this.name());
     }
 
     protected void initConfig() {
