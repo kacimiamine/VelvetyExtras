@@ -1,10 +1,12 @@
 package com.kacimiamine.velvetyextras.module;
 
+import com.google.auto.service.AutoService;
 import io.papermc.paper.event.block.VaultChangeStateEvent;
 import org.bukkit.block.Vault;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 
+@AutoService(Module.class)
 public class VaultUnlockedModule extends ModuleImpl {
 
     @Override

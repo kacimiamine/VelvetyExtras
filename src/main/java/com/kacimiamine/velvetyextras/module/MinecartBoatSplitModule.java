@@ -1,6 +1,7 @@
 package com.kacimiamine.velvetyextras.module;
 
 import com.destroystokyo.paper.MaterialSetTag;
+import com.google.auto.service.AutoService;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -13,6 +14,7 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.vehicle.VehicleDestroyEvent;
 import org.bukkit.inventory.ItemStack;
 
+@AutoService(Module.class)
 public class MinecartBoatSplitModule extends ModuleImpl {
 
     @Override

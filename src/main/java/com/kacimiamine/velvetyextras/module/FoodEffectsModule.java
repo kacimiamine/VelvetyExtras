@@ -1,5 +1,6 @@
 package com.kacimiamine.velvetyextras.module;
 
+import com.google.auto.service.AutoService;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.Registry;
@@ -15,6 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@AutoService(Module.class)
 public class FoodEffectsModule extends ModuleImpl {
 
     private final Map<Material, List<PotionEffect>> foodEffects = new HashMap<>();

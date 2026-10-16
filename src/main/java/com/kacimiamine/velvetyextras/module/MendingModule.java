@@ -1,5 +1,6 @@
 package com.kacimiamine.velvetyextras.module;
 
+import com.google.auto.service.AutoService;
 import com.kacimiamine.velvetyextras.VelvetyExtras;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
@@ -10,6 +11,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.MerchantRecipe;
 import org.bukkit.inventory.meta.EnchantmentStorageMeta;
 
+@AutoService(Module.class)
 public class MendingModule extends ModuleImpl {
 
     @Override

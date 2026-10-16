@@ -10,6 +10,8 @@ repositories {
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:26.3.build.+")
+    compileOnly("com.google.auto.service:auto-service-annotations:1.1.1")
+    annotationProcessor("com.google.auto.service:auto-service:1.1.1")
 }
 
 java {

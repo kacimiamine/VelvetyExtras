@@ -1,6 +1,7 @@
 package com.kacimiamine.velvetyextras.module;
 
 import com.destroystokyo.paper.event.player.PlayerPostRespawnEvent;
+import com.google.auto.service.AutoService;
 import com.kacimiamine.velvetyextras.VelvetyExtras;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -11,6 +12,7 @@ import org.bukkit.event.player.PlayerRespawnEvent;
 
 import java.util.Random;
 
+@AutoService(Module.class)
 public class DeathModule extends ModuleImpl {
 
     @Override
