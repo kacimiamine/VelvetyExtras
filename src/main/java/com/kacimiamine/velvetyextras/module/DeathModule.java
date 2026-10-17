@@ -10,7 +10,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.player.PlayerRespawnEvent;
 
-import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 @AutoService(Module.class)
 public class DeathModule extends ModuleImpl {
@@ -53,9 +53,8 @@ public class DeathModule extends ModuleImpl {
         World respawnWorld = VelvetyExtras.getInstance().getServer().getRespawnWorld();
         Location center = randomRespawnUseDeathLocationAsCenter ? player.getLocation() : respawnWorld.getSpawnLocation();
 
-        Random random = new Random();
-        double x = random.nextDouble(center.x() - randomRespawnRadius, center.x() + randomRespawnRadius + 1) + 0.5;
-        double z = random.nextDouble(center.z() - randomRespawnRadius, center.z() + randomRespawnRadius + 1) + 0.5;
+        double x = ThreadLocalRandom.current().nextDouble(center.x() - randomRespawnRadius, center.x() + randomRespawnRadius + 1) + 0.5;
+        double z = ThreadLocalRandom.current().nextDouble(center.z() - randomRespawnRadius, center.z() + randomRespawnRadius + 1) + 0.5;
 
         event.setRespawnLocation(new Location(respawnWorld, x, 256, z));
     }
